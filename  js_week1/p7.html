@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate to Spanish</title>
+    <script>
+        function spanish() {
+            let str = document.getElementById("spanish").value.toLowerCase().split(" ");
+            const dic = {
+                "merry": "god",
+                "christmas": "jul",
+                "and": "och",
+                "happy": "gott",
+                "new": "nytt",
+                "year": "ar"
+            };
+
+            let res = "";
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] in dic) {
+                    res += dic[str[i]] + " ";
+                } else {
+                    res = "Not matching words!!";
+                    break; // Exit the loop if a word doesn't match
+                }
+            }
+            document.getElementById("result").innerHTML = res.trim(); // Trim to remove extra space
+        }
+    </script>
+</head>
+<body>
+    <h1>Translate to Spanish</h1>
+    <input type="text" id="spanish" placeholder="Enter a phrase (e.g., merry christmas)">
+    <br><br>
+    <button onclick="spanish()">Translate</button>
+    <h2>Translation: <span id="result"></span></h2>
+</body>
+</html>

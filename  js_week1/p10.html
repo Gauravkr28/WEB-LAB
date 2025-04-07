@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Character Frequency</title>
+    <script>
+        function findfreq() {
+            let str = document.getElementById("freq").value;
+            let obj = {};
+
+            for (let i = 0; i < str.length; i++) {
+                if (!(str[i] in obj)) {
+                    obj[str[i]] = 1;
+                } else {
+                    obj[str[i]] += 1;
+                }
+            }
+            document.getElementById("result").innerHTML = JSON.stringify(obj, null, 2); // Pretty print JSON
+        }
+    </script>
+</head>
+<body>
+    <h1>Find Character Frequency</h1>
+    <input type="text" id="freq" placeholder="Enter a string">
+    <br><br>
+    <button onclick="findfreq()">Find Frequency</button>
+    <h2>Character Frequency:</h2>
+    <pre id="result"></pre> <!-- Use <pre> for better formatting of JSON -->
+</body>
+</html>

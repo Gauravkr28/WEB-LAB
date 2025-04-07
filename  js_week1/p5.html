@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum and Multiply Numbers</title>
+    <script>
+        function sums() {
+            let arr = document.getElementById("nums").value.split(",");
+            let res = 0;
+            for (let i = 0; i < arr.length; i++) {
+                res += parseInt(arr[i]);
+            }
+            document.getElementById("result").innerHTML = "Sum: " + res;
+        }
+
+        function muls() {
+            let arr = document.getElementById("nums").value.split(",");
+            let res = 1;
+            for (let i = 0; i < arr.length; i++) {
+                res *= parseInt(arr[i]);
+            }
+            document.getElementById("result").innerHTML = "Product: " + res;
+        }
+    </script>
+</head>
+<body>
+    <h1>Sum and Multiply Numbers</h1>
+    <input type="text" id="nums" placeholder="Enter numbers separated by commas">
+    <br><br>
+    <button onclick="sums()">Calculate Sum</button>
+    <button onclick="muls()">Calculate Product</button>
+    <h2 id="result"></h2>
+</body>
+</html>

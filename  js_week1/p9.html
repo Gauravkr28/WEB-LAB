@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Long Words</title>
+    <script>
+        function findlong() {
+            let arr = document.getElementById("wd").value.split(",");
+            let k = document.getElementById("inti").value;
+            let res = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                // Trim whitespace from each word
+                let word = arr[i].trim();
+                if (word.length > parseInt(k)) {
+                    res.push(word);
+                }
+            }
+            document.getElementById("result").innerHTML = res.length > 0 ? res.join(", ") : "No words found.";
+        }
+    </script>
+</head>
+<body>
+    <h1>Find Words Longer Than Specified Length</h1>
+    <input type="text" id="wd" placeholder="Enter words separated by commas">
+    <br><br>
+    <input type="number" id="inti" placeholder="Enter minimum length">
+    <br><br>
+    <button onclick="findlong()">Find Long Words</button>
+    <h2>Words Longer Than Specified Length: <span id="result"></span></h2>
+</body>
+</html>
